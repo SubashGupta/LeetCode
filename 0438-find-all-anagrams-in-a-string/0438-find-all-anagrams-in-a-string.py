@@ -3,36 +3,38 @@ class Solution:
         op = []
         if len(p) > len(s):
             return op
-        d = {}
-        for i in p:
-            if i in d:
-                d[i] += 1
-            else:
-                d[i] = 1
+        
+        # Count characters in the pattern
+        pattern_counts = {}
+        for char in p:
+            pattern_counts[char] = pattern_counts.get(char, 0) + 1
         
         i = 0
         j = 0
-        count = len(d)
-        n = len(s)
-        k = len(p)
+        count = len(pattern_counts)
         match_count = 0
-
-        # Initialize the sliding window
-        window = {}
-        for j in range(n):
-            if s[j] in d:
-                window[s[j]] = window.get(s[j], 0) + 1
-                if window[s[j]] == d[s[j]]:
+        
+        # Iterate through the string
+        while j < len(s):
+            # Update match count
+            if s[j] in pattern_counts:
+                pattern_counts[s[j]] -= 1
+                if pattern_counts[s[j]] == 0:
                     match_count += 1
             
-            if j >= k:
-                if s[i] in d:
-                    window[s[i]] -= 1
-                    if window[s[i]] == d[s[i]] - 1:
+            # Move the window
+            if j - i + 1 > len(p):
+                if s[i] in pattern_counts:
+                    pattern_counts[s[i]] += 1
+                    if pattern_counts[s[i]] == 1:
                         match_count -= 1
                 i += 1
             
-            if match_count == count:
-                op.append(i)
+            # Check if anagram found
+            if j - i + 1 == len(p):
+                if match_count == count:
+                    op.append(i)
+                
+            j += 1
         
         return op
