@@ -10,5 +10,4 @@ class Solution:
                 lst[i] = "Buzz"
             else:
                 lst[i] = str(i+1)
-        return lst
-        
+        return lst      
