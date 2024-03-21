@@ -11,10 +11,8 @@ class Solution:
                 op[j] = sums
         elif k<0:
             sums=sum(code[k:])
-            print(sums)
             op[0] = sums
             for j in range(1,len(code)):
-                print(code[(-k+j-1)%n], code[j-1])
                 sums+=code[j-1]-code[(k+j-1)%n]
                 op[j] = sums
         else:
