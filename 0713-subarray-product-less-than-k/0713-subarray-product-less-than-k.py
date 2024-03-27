@@ -13,7 +13,6 @@ class Solution:
             if prod<k:
                 c+=j-i+1
                 j+=1
-                #print(c,i,j)
                 caches = True
             else:
                 prod//=nums[i]
