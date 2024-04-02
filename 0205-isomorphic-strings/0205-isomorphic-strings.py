@@ -1,12 +1,15 @@
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
-        map1 = []
-        map2 = []
-        for idx in s:
-            map1.append(s.index(idx))
-        for idx in t:
-            map2.append(t.index(idx))
-        if map1 == map2:
-            return True
-        return False
+        d={}
+        new=""
+        if len(set(s)) == len(set(t)):
+            for i in range(len(s)):
+                if s[i] not in d:
+                    d[s[i]] =t[i]
+            for i in range(len(s)):
+                new+=d[s[i]]
+            return new == t
+        else:
+            return False
+            
         
