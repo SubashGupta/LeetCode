@@ -5,11 +5,8 @@ class Solution:
         sums = nums[0]
         for i in range(1,len(nums)):
             sums+=nums[i]
-            try:
-                x=d[sums]
-            except:
-                x='error'
-            if x != 'error':
+            x=d.get(sums, 'e')
+            if x != 'e':
                 return True
             else:
                 d[sums] = (i-1,i)
