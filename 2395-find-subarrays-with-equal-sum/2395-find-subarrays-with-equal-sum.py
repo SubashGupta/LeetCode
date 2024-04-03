@@ -5,7 +5,7 @@ class Solution:
         sums = nums[0]
         for i in range(1,len(nums)):
             sums+=nums[i]
-            x=d.get(sums, 'e')
+            x=d.get(sums,'e')
             if x != 'e':
                 return True
             else:
