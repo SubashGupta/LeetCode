@@ -10,6 +10,8 @@ class Solution:
                 maxi = max(c,maxi)
             elif i == ")":
                 c-=1
-        return maxi
-        
+        if c == 0:
+            return maxi
+        else:
+            return 0
         
