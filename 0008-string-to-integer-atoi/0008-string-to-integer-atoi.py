@@ -32,26 +32,20 @@ class Solution:
                     flag = True
                     break
         if flag & op:
-            if negative == True:
-                if op>2**31:
-                    return -1*(2**31)
-                else:
-                    return op*-1
-            elif negative == False:
-                if op>(2**31)-1:
-                    return 2**31 -1
-                else:
-                    return op
+            if negative:
+                op= -op
+            if op>=2**31:    
+                return 2**31 -1
+            elif op<-2**31:
+                return -2**31                
             else:
                 return 0
         else:
             if negative:
-                if op>2**31:
-                    return -1*(2**31)
-                else:
-                    return op*-1
+                op= -op
+            if op>=2**31:    
+                return 2**31 -1
+            elif op<-2**31:
+                return -2**31                
             else:
-                if op>(2**31)-1:
-                    return 2**31 -1
-                else:
-                    return op
+                return op
