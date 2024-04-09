@@ -1,22 +1,16 @@
 class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
-        for i in range(len(nums)):
-            nums[i] = nums[i]*nums[i]
-        gap=ceil(len(nums)/2)
-        counts=0
-        while gap>0:
-            i=0
-            j=gap
-            while j<len(nums):
-                if nums[i]>nums[j]:
-                    nums[i],nums[j]=nums[j],nums[i]
+        j=len(nums)-1
+        i=0
+        op=[]
+        while i<=j:
+            if abs(nums[i])<abs(nums[j]):
+                op.append(nums[j]*nums[j])
+                j-=1
+            else:
+                op.append(nums[i]*nums[i])
                 i+=1
-                j+=1
-            if gap == 1:
-                break
-            gap=ceil(gap/2)
-        return nums
-                    
+        return op[::-1]
                     
             
             
