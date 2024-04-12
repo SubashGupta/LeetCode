@@ -10,7 +10,6 @@ class Solution:
         right[n-1]=height[n-1]
         for j in range(n-2,-1,-1):
             right[j]=max(right[j+1],height[j])
-        print(left,right)
         for i in range(n):
             h+=min(left[i],right[i])-height[i]
         return h
