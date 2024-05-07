@@ -12,6 +12,8 @@ class Solution:
             curr.next = prev
             prev=curr
             curr=nexts
+        #reversing done
+        
         head = prev
         maxi = 0
         prev = None
@@ -26,6 +28,8 @@ class Solution:
             else:
                 prev = current
                 current = current.next
+        #only the highest nodes are selected
+        
         prev=None
         curr = head
         while curr:
