@@ -4,7 +4,6 @@ class Solution:
         columns = len(grid[0])
         for i in range(rows):
             if grid[i][0] == 0:
-                #logic to flip
                 for j in range(columns):
                     grid[i][j] = 1 - grid[i][j]
         
