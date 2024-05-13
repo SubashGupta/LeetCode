@@ -9,7 +9,6 @@ class Solution:
                     grid[i][j] = 1 - grid[i][j]
         
         for j in range(1, columns):
-            #counting the number of zeros in each column
             c=0
             for i in range(rows):
                 if grid[i][j] == 0:
