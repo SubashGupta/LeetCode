@@ -15,8 +15,8 @@ class Solution:
                 curr.next = prev
                 prev = curr
                 curr = nexts
-            return prev, curr
-
+            return prev
+        
         curr = head
         finalhead = None
         prev_group_tail = None
@@ -27,13 +27,13 @@ class Solution:
                 tempcount += 1
                 curr = curr.next
             if tempcount == k:
-                continuehead, next_group_head = swapfunction(begin, k)
+                continuehead = swapfunction(begin, k)
                 if not finalhead:
                     finalhead = continuehead
                 if prev_group_tail:
                     prev_group_tail.next = continuehead
                 prev_group_tail = begin
-            else:  # If there are fewer than k nodes left
+            else:
                 if prev_group_tail:
                     prev_group_tail.next = begin
                 break
