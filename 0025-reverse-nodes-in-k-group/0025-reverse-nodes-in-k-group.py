@@ -18,23 +18,23 @@ class Solution:
             return prev, curr
 
         curr = head
-        finalhead = None  # Initialize finalhead
-        prev_group_tail = None  # Track the tail of the previous reversed group
+        finalhead = None
+        prev_group_tail = None
         while curr:
             begin = curr
             tempcount = 0
-            while curr and tempcount < k:  # Count nodes in the current group
+            while curr and tempcount < k:
                 tempcount += 1
                 curr = curr.next
-            if tempcount == k:  # If there are enough nodes to reverse
+            if tempcount == k:
                 continuehead, next_group_head = swapfunction(begin, k)
-                if not finalhead:  # If finalhead is not assigned yet
+                if not finalhead:
                     finalhead = continuehead
-                if prev_group_tail:  # Connect the previous group to the current reversed group
+                if prev_group_tail:
                     prev_group_tail.next = continuehead
                 prev_group_tail = begin
             else:  # If there are fewer than k nodes left
-                if prev_group_tail:  # Connect the previous group to the remaining nodes
+                if prev_group_tail:
                     prev_group_tail.next = begin
-                break  # No need to reverse further
+                break
         return finalhead
