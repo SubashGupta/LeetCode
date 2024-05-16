@@ -16,9 +16,9 @@ class Solution:
         tobreak = length - k
         if tobreak == length:
             return head
-        c=1
+        c=0
         curr = head
-        while c<tobreak:
+        while c<tobreak-1:
             curr=curr.next
             c+=1
         breakstart = curr.next
