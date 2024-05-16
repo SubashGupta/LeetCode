@@ -15,8 +15,6 @@ class Solution:
         if length == k:
             return head
         k = k%length
-        if length == 0:
-            return head
         tobreak = length - k
         if tobreak == length:
             return head
