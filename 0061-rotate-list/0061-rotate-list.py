@@ -12,8 +12,6 @@ class Solution:
         while curr:
             length+=1
             curr=curr.next
-        if length == k:
-            return head
         k = k%length
         tobreak = length - k
         if tobreak == length:
