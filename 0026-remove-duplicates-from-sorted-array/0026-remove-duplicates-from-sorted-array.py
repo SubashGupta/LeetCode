@@ -11,7 +11,6 @@ class Solution:
                 p1+=1
                 p2+=1
                 prev = nums[p1]
-        print(nums)
         return p1+1
         
                 
