@@ -2,8 +2,6 @@ class Solution:
     def majorityElement(self, nums: List[int]) -> List[int]:
         n=len(nums)
         conditions = n/3
-        if n == 1 or n == 2:
-            return list(set(nums))
         op=[]
         nums.sort()
         c=1
