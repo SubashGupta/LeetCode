@@ -9,7 +9,6 @@ class Solution:
             digits.append(total%10)
             total=total//10
         for i in range(size-1,-1,-1):
-            print("alsocamein")
             digits[i] = total%10
             total=total//10
         return digits
