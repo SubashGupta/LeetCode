@@ -1,36 +1,24 @@
 class Solution:
     def lemonadeChange(self, bills: List[int]) -> bool:
-        d={}
-        index=0
+        five=0
+        ten=0
         for i in bills:
-            index+=1
-            val1 = d.get(5,0)
-            val2 = d.get(10,0)
             if i == 5:
-                d[i] = d.get(i,0)+1
+                five+=1
             elif i == 10:
+                ten+=1
                 diff = 5
-                d[i] = d.get(i,0)+1
-                val1 = d.get(5,0)
-                if val1:
-                    d[diff]-=1
+                if five:
+                    five-=1
                 else:
                     return False
-            elif i == 20:
+            else:
                 diff = 15
-                d[i] = d.get(i,0)+1
-                if val1 or val2:
-                    while diff != 0:
-                        val1 = d.get(5,0)
-                        val2 = d.get(10,0)
-                        if diff > 5 and val2:
-                            d[10]-=1
-                            diff-=10
-                        elif diff >= 5 and val1:
-                            d[5]-=1
-                            diff-=5
-                        else:
-                            return False
+                if five and ten:
+                    five-=1
+                    ten-=1
+                elif five>=3:
+                    five-=3
                 else:
                     return False
         return True
