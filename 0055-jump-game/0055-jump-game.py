@@ -5,4 +5,6 @@ class Solution:
             if i>reach:
                 return False
             reach = max(reach, i+nums[i])
+            if reach >= len(nums)-1:
+                return True
         return True
