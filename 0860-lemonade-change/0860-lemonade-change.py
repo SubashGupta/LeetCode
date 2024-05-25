@@ -33,5 +33,4 @@ class Solution:
                             return False
                 else:
                     return False
-            print(index,d)
         return True
