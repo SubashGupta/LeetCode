@@ -11,7 +11,7 @@ class Solution:
                 rightend = mid
                 while nums[leftstart-1] == target and leftstart>0:
                     leftstart-=1  
-                while rightend < len(nums) - 1 and nums[rightend + 1] == target:
+                while rightend < len(nums)-1 and nums[rightend+1] == target:
                     rightend+=1
                 return [leftstart, rightend]
             elif nums[mid]<target:
