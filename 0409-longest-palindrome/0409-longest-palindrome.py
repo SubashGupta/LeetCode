@@ -9,6 +9,6 @@ class Solution:
             if d[i]%2==0:
                 c1+=d[i]
             else:
-                c1+=d[i]-1
-                oddcount=1
+                c1+=d[i]-1 #Because if there are 3 ccc's then we take 2 of them sure.
+                oddcount=1 #stating that one odd char is considered for middle
         return c1+oddcount
