@@ -1,6 +1,6 @@
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
-        op=[]
+        op1=[]
         d={}
         for i in range(len(nums2)):
             d[nums2[i]] = i
@@ -12,6 +12,5 @@ class Solution:
                     maxi = nums2[indexStart]
                     break
                 indexStart+=1
-            op.append(maxi)
-        return op
-        
+            op1.append(maxi)
+        return op1
