@@ -1,8 +1,18 @@
 class Solution:
     def minMovesToSeat(self, seats: List[int], students: List[int]) -> int:
-        seats.sort()
-        students.sort()
-        x=0
-        for i in range(len(students)):
-            x+=(abs(students[i]-seats[i]))
-        return x
+        maxi = max(max(seats),max(students))
+        op = [0]*maxi
+        for i in seats:
+            op[i-1]+=1
+        print(op)
+        for i in students:
+            op[i-1]-=1
+        print(op)
+        moves=0
+        unmatched=0
+        for i in op:
+            moves+=abs(unmatched)
+            unmatched+=i
+            print(moves,unmatched)
+        return moves
+        
