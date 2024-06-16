@@ -14,7 +14,6 @@ class Solution:
         p1=head
         p2=head.next
         while p1 and p2:
-            print("I ", p1.val, p2.val, flag)
             if p2.val != p1.val:
                 if flag == True:
                     x.next = ListNode(temp)
