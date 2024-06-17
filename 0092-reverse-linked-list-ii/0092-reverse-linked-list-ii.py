@@ -9,7 +9,6 @@ class Solution:
         temp=head
         original=head
         prev=None
-        flag=False
         start = None
         if left == right:
             return original
@@ -18,19 +17,16 @@ class Solution:
             count+=1
             temp = temp.next
         end=temp
-        val=temp.next
         while temp and count<=right:
+            val=temp.next
             temp.next=prev
             prev=temp
             temp=val
             count+=1
-            if temp:
-                val = temp.next
-        if count == right+1:
-            end.next = temp
-            if start:
-                start.next = prev
-            else:
-                original = prev
-            return original
+        end.next = temp
+        if start:
+            start.next = prev
+        else:
+            original = prev
+        return original
             
