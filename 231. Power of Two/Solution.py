@@ -4,15 +4,11 @@ class Solution:
             return True
         elif n==0:
             return False
-        p=n
-        while p!=0:
-            if p==1:
+        while n!=0:
+            if n==1:
                 return True
-            if p%2==0:
-                p=p//2
+            if n%2==0:
+                n=n//2
             else:
                 return False
         return True
-
-
-        
